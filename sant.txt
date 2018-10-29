@@ -1,0 +1,103 @@
+create table abc11
+(
+fname varchar(20),
+iname varchar(20),
+emid number(20),
+loc varchar(20),
+salary number(20)
+)
+insert into abc11 values('ram','sinha',1,'idh',23400)
+insert into abc11 values('shma','sinha',2,'chd',26400)
+insert into abc11 values('sham','sinha',3,'chd',26400)
+insert into abc11 values('sham','sinha',4,'chd',26400)
+
+
+
+create table abc12 
+(
+name varchar(20),
+emid number(20)
+)
+
+insert into abc12 values('shma',2)
+
+insert into abc12 values('hatim',24)
+insert into abc12 values('alok',52)
+
+
+
+select fname from abc11
+UNION
+select name from abc12
+
+
+select emid from abc11 where emid >4
+UNION
+select emid from abc12
+
+select emid from abc11
+UNION all
+select emid from abc12
+
+
+
+
+select emid,fname from abc11
+UNION
+select name,emid from abc12
+
+select loc from m11
+UNION ALL
+select name from m12
+
+
+select emid from abc11
+intersect
+select emid from abc12
+
+
+select *from abc11 cross join abc12
+
+select *from abc11 join abc12
+
+
+
+
+create table class
+(
+id number,
+name varchar(20),
+sec varchar(20)
+)
+insert into class values(1,'abhi','A')
+insert into class values(2,'minu','A')
+insert into class values(3,'manish','b')
+
+create table classinfo
+(
+id number,
+address varchar(20)
+)
+
+insert into classinfo values(1,'chd')
+insert into classinfo values(2,'dhl')
+insert into classinfo values(3,'pun')
+insert into classinfo values(4,'gna')
+
+select *from class
+
+select *from classinfo
+
+
+select name,address,sec from class,classinfo where class.id<classinfo.id
+
+
+select name,address from class inner join classinfo on class.id>classinfo.id
+
+
+select name,address from class natural join classinfo
+
+select *from class natural join classinfo
+
+
+select *from class inner join classinfo on class.id=classinfo.id 
