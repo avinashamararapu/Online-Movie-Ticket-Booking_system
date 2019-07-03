@@ -1,0 +1,155 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+	
+	
+	
+	<header>
+<div class="container">
+<div id="branding">
+<h1><span class="highlight">movieSpotz</span>.COM</h1> 
+
+<h1><span class="highlight" style="color:YELLOW"> Know Your Movie IMDB Ratings</h1>  
+</div>
+<div>
+
+</head>
+
+</body>
+
+<ul>
+<li class="current"><a href="web browser.html">Home</a></li>
+<li><a href="SIGN UP.html">SIGN UP</a></li>
+<li><a href="LOGIN.html">LOG IN</a></li>
+</ul>
+<body>
+    <div class="search-bar">
+        <input type="text" name="search" value="" autocomplete="off" id="myinput" onkeyup="searchFunction()" placeholder="Search for movie">
+
+    </div>
+	
+    <ul id="wrapper">
+        <li>
+            <a href="https://www.imdb.com/title/tt2250912/"> Spiderman</a>
+        </li>
+        <li>
+            <a href="https://www.imdb.com/title/tt1270797/"> venom</a>
+        </li>
+        <li>
+            <a href="https://www.imdb.com/title/tt4154756/">Infinity war</a>
+        </li>
+        <li>
+            <a href="https://www.imdb.com/title/tt1825683/"> Black Panther</a>
+        </li>
+        <li>
+            <a href="https://www.imdb.com/title/tt3606756/">Incredibles 2</a>
+        </li>
+        <li>
+            <a href="https://www.imdb.com/title/tt5758778/"> sky scraper</a>
+        </li>
+        <li>
+            <a href="https://www.imdb.com/title/tt4881806/"> jurassic world</a>
+        </li>
+        <li>
+            <a href="https://www.imdb.com/title/tt5814060/"> NUN</a>
+        </li>
+        <li>
+            <a href="https://www.imdb.com/title/tt2231461/"> Rampage</a>
+        </li>
+  
+    </ul>
+</body>
+
+</html>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    background-image: url("download.jpg");
+	padding: 25px;
+}
+
+.search-bar {
+	position: relative;
+    margin: 0 auto;
+    width: 95%;
+    max-width: 344px;
+    height: 48px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+input {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 40px;
+    left: 172px;
+    margin: 4px 0;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+ul#wrapper {
+    list-style: none;
+    display: inline-block;
+    margin-top: 50px;
+	text-align: center;
+}
+
+li {
+    width: 200px;
+    height: 100px;
+    background: #673ab7;
+    display: inline-block;
+    margin: 10px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    text-align: center;
+}
+
+a {
+    font-size: 24px;
+    color: cyan;
+    line-height: 100px;
+    font-family: monospace;
+    text-decoration: none;
+}
+</style>
+<script>
+
+function searchFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myinput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById('wrapper');
+    li = ul.getElementsByTagName('li');
+
+    for(i=0 ; i< li.length; i++){
+        a = li[i].getElementsByTagName('a')[0];
+        if(a.innerHTML.toUpperCase().indexOf(filter) > -1){
+            li[i].style.display = "";
+        }
+
+        else{
+            li[i].style.display = 'none';
+        }
+    }
+}
+</script>
+
+</html>
